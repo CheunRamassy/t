@@ -7,10 +7,16 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        toolbarHeight: 100,
         title: Text('Movies'.toUpperCase()),
         centerTitle: true,
         foregroundColor: Colors.white,
         backgroundColor: Colors.deepPurple,
+        titleTextStyle: TextStyle(
+          fontFamily: 'Arial',
+          fontWeight: FontWeight.bold,
+          fontSize: 40,
+        ),
       ),
       backgroundColor: Colors.black,
     );
