@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:test/widget/movie_card.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -19,6 +20,124 @@ class HomePage extends StatelessWidget {
         ),
       ),
       backgroundColor: Colors.black,
+      body: ListView(
+        children: [
+          Padding(
+            padding: const EdgeInsets.all(30),
+            child: Row(
+              children: [
+                Expanded(
+                  child: ElevatedButton(
+                    onPressed: () {},
+                    child: Text(
+                      'Tous'.toUpperCase(),
+                      style: TextStyle(color: Colors.deepPurple),
+                    ),
+                  ),
+                ),
+                Expanded(
+                  child: ElevatedButton(
+                    onPressed: () {},
+                    child: Text(
+                      'western'.toUpperCase(),
+                      style: TextStyle(color: Colors.deepPurple),
+                    ),
+                  ),
+                ),
+                Expanded(
+                  child: ElevatedButton(
+                    onPressed: () {},
+                    child: Text(
+                      'horreur'.toUpperCase(),
+                      style: TextStyle(color: Colors.deepPurple),
+                    ),
+                  ),
+                ),
+                Expanded(
+                  child: ElevatedButton(
+                    onPressed: () {},
+                    child: Text(
+                      // 'comédie',
+                      'comédie'.toUpperCase(),
+                      style: TextStyle(color: Colors.deepPurple),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+          Stack(
+            children: [
+              Center(
+                child: Container(
+                  width: 350,
+                  height: 220,
+                  child: Image.asset(
+                    'assets/SpiderMan.webp',
+                    fit: BoxFit.contain,
+                  ),
+                ),
+              ),
+              Positioned(
+                top: 175,
+                left: 340,
+                // width: 300,
+                // height: 450,
+                child: Icon(Icons.play_circle_filled, color: Colors.white),
+              ),
+            ],
+          ),
+          SizedBox(height: 20),
+          Padding(
+            padding: const EdgeInsets.only(left: 20, right: 20),
+            child: Column(
+              // 1er film de la colonne
+              children: [
+                MovieCard(
+                  moviePics: 'assets/Superman.webp',
+                  synopsis:
+                      "orem Ipsum is simply dummy text of the printing and typesetting industry. but also the leap into electronic typesetting, unchanged.",
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(20),
+                  child: Container(
+                    decoration: BoxDecoration(
+                      border: Border.all(color: Colors.white),
+                    ),
+                  ),
+                ),
+                // 2ème film
+                MovieCard(
+                  moviePics: 'assets/Joker.webp',
+                  synopsis:
+                      "orem Ipsum is simply dummy text of the printing and typesetting industry. but also the leap into electronic typesetting, unchanged.",
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(20),
+                  child: Container(
+                    decoration: BoxDecoration(
+                      border: Border.all(color: Colors.white),
+                    ),
+                  ),
+                ),
+                // 3ème film
+                MovieCard(
+                  moviePics: 'assets/Avatar.webp',
+                  synopsis:
+                      "orem Ipsum is simply dummy text of the printing and typesetting industry. but also the leap into electronic typesetting, unchanged.",
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        items: const [
+          BottomNavigationBarItem(icon: Icon(Icons.home), label: "Accueil"),
+          BottomNavigationBarItem(icon: Icon(Icons.search), label: "Recherche"),
+          BottomNavigationBarItem(icon: Icon(Icons.person), label: "Profil"),
+        ],
+      ),
     );
   }
 }
